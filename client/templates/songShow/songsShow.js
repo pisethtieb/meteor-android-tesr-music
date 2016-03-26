@@ -27,8 +27,6 @@ Template.songsShow.rendered = function () {
 };
 
 
-
-
 //songsShow event
 Template.songsShow.events({
     'click .jsPlay': function () {
@@ -48,11 +46,11 @@ Template.songsShow.events({
 
         $('.progressBar').val(0);
         ////clearInterval(interval);
-        //let increaseSecond = 0;
-        //var interval = setInterval(function () {
-        //    increaseSecond = increaseSecond + 1;
-        //    $('.progressBar').val(increaseSecond);
-        //    //console.log(increaseSecond);
+        let increaseSecond = 0;
+        //setInterval(function () {
+            increaseSecond = increaseSecond + 1;
+            $('.progressBar').val(increaseSecond);
+            //console.log(increaseSecond);
         //}, 1000);
         //console.log(typeof interval);
 
@@ -70,18 +68,21 @@ Template.songsShow.events({
     },
     'change .progressBar': function () {
         let getInput = document.querySelector('.progressBar');
-        console.log(getInput.value);
         let fromTime = getInput.value;
         M.setTime(buzz.fromTimer(fromTime));
-        //$('.progressBar').val(0);
+
+        //var timer = buzz.toTimer(M.getDuration());
+        //var get_timer = timer.split(':');
+        //let dur = get_timer.map(Number);
+        //var seconds = (dur[0] * 60) + dur[1];
+        //let increaseSecond = Number(fromTime);
+        //let final = increaseSecond - seconds;
+        //let pro = final.toString()
         //
-        //let increaseSecond = 0;
-        ////clearInterval(interval);
-        //setInterval(function () {
-        //    increaseSecond = increaseSecond + 1;
-        //    $('.progressBar').val(increaseSecond);
-        //    //console.log(increaseSecond);
-        //}, 1000);
+        //
+        //$('.progressBar').val(pro);
+        //console.log(increaseSecond);
+
 
     }
 });
